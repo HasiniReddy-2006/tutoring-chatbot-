@@ -2,7 +2,8 @@ import os
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 import torch
 
-model_name = "tiiuae/falcon-rw-1b"
+model_name = "gpt2"
+
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name).to("cuda" if torch.cuda.is_available() else "cpu")
