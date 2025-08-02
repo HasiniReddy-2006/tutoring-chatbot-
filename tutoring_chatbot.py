@@ -1,4 +1,4 @@
-!pip install -q transformers accelerate gradio
+
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 import torch
 
