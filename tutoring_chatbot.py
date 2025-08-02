@@ -50,4 +50,10 @@ with gr.Blocks() as demo:
     msg.submit(chat, [subject, msg, state], [chatbot, state])
     clear.click(lambda: ([], []), None, [chatbot, state])
 
-app = demo.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)), prevent_thread_lock=True)
+if __name__ == "__main__":
+    demo.queue()
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=int(os.environ.get("PORT", 7860)),
+        prevent_thread_lock=True
+    )
